@@ -94,7 +94,7 @@ DOC_LOCS = ['DOC1', 'DOC2']
 
 # ----------------- [백엔드 데이터 로드 로직] -----------------
 def fetch_data_from_backend():
-    url = "http://127.0.0.1:8000/api/containers"
+    url = "https://twiddle-refract-editor.ngrok-free.dev/api/containers"
     try:
         response = requests.get(url, timeout=3)
         if response.status_code == 200:
