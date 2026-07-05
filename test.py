@@ -5,7 +5,7 @@ import openpyxl
 from openai import OpenAI
 
 # OpenAI 클라이언트 초기화
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="")
 
 def encode_image_to_base64(image_path):
     with open(image_path, "rb") as image_file:
