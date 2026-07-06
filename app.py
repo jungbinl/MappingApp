@@ -95,12 +95,18 @@ DOC_LOCS = ['DOC1', 'DOC2']
 # ----------------- [백엔드 데이터 로드 로직] -----------------
 def fetch_data_from_backend():
     url = "https://twiddle-refract-editor.ngrok-free.dev/api/containers"
+    
     try:
-        response = requests.get(url, timeout=3)
+        # 💡 ngrok의 안내 페이지를 건너뛰게 만드는 마법의 헤더를 추가합니다.
+        headers = {"ngrok-skip-browser-warning": "69420"}
+        
+        # ⭕ 기존 requests.get 뒤에 headers=headers를 넣어줍니다.
+        response = requests.get(url, headers=headers, timeout=5)
+        
         if response.status_code == 200:
             return response.json()
     except requests.exceptions.ConnectionError:
-        st.error("🚨 백엔드 서버(loaddata.py)가 꺼져 있습니다! uvicorn 명령어로 서버를 켜주세요.")
+        st.error("🚨 백엔드 API 서버에 연결할 수 없습니다.")
         
     return {
         "sd_zone": {"r1": [""]*len(SD_LOCS), "r2": [""]*len(SD_LOCS)},
@@ -108,7 +114,6 @@ def fetch_data_from_backend():
         "nf_zone": {"even_r1": [""]*len(NF_EVEN_H), "even_r2": [""]*len(NF_EVEN_H), "odd_r1": [""]*len(NF_ODD_H), "odd_r2": [""]*len(NF_ODD_H)},
         "doc_zone": {"r1": [""]*len(DOC_LOCS), "r2": [""]*len(DOC_LOCS)}
     }
-
 db = fetch_data_from_backend()
 
 
