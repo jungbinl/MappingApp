@@ -96,7 +96,7 @@ st.markdown("""
 st.markdown('<div class="main-title">📦 하이브리드 컨테이너 위치 관제 시스템 (사용자 정의 레이아웃)</div>', unsafe_allow_html=True)
 
 # ----------------- [📌 사용자 정의 레이아웃 고정 틀 정의] -----------------
-SD_LOCS = ['SD-3', 'SD-2', 'SD-1', 'SD1', 'SD2', 'SD3', 'SD4', 'SD5', 'SD6', 'SDE-1', 'SD7', 'SD8', 'SD9', 'SD10', 'SD11', 'SD12', 'SD13', 'SD14', 'SD15', 'SDE-2', 'SD16', 'SD17', 'SD18', 'SD19', 'NEW WATERPROOF', 'OUTPUT STATION', 'SDE-3', 'SDX3', 'SDX2', 'SDX1']
+SD_LOCS = ['SD-3', 'SD-2', 'SD-1','SD0', 'SD1', 'SD2', 'SD3', 'SD4', 'SD5', 'SD6', 'SDE-1', 'SD7', 'SD8', 'SD9', 'SD10', 'SD11', 'SD12', 'SD13', 'SD14', 'SD15', 'SDE-2', 'SD16', 'SD17', 'SD18', 'SD19', 'NEW WATERPROOF', 'OUTPUT STATION', 'SDE-3', 'SDX3', 'SDX2', 'SDX1']
 
 # 💡 질문자님이 변경하신 SF 리스트 완벽 적용
 SF_EVEN_H = [f"SF{i}" for i in range(2, 61, 2)] + ['SF61', 'SF62', 'SF63', 'SF64', 'SF65','SF66', 'SF67', 'SFE-1', 'SFE-2', 'SF68', 'SF69', 'SF70']
@@ -509,7 +509,6 @@ with tab_search:
                 st.warning("⚠️ 입력하신 번호와 일치하는 컨테이너가 현재 어느 구역에도 보관되어 있지 않습니다.")
         else:
             st.info("💡 실시간 위치를 조회하려면 조회창에 검색어를 입력해 주세요. (글자 일부만 입력해도 매칭됩니다.)")
-
 
 # ----------------- [🎨 하단 가이드 범례 창] -----------------
 st.markdown("""
